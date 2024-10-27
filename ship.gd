@@ -11,5 +11,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	move_and_collide(Vector3.FORWARD * delta * 4)
-	pass
+	var speed = 4
+	move_and_collide(get_transform().basis.z.normalized() * delta * speed)
+
+func _input(event):
+	if Input.is_key_pressed(KEY_A):
+		rotate_y(0.1)
+	if Input.is_key_pressed(KEY_D):
+		rotate_y(-0.1)
