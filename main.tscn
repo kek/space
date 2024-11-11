@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dndaake5ns0gr"]
 
 [ext_resource type="Script" path="res://scripts/ship.gd" id="1_og1tj"]
-[ext_resource type="Script" path="res://obstacle_collision.gd" id="2_ddv4y"]
+[ext_resource type="Script" path="res://scripts/obstacle_collision.gd" id="2_ddv4y"]
 [ext_resource type="PackedScene" uid="uid://ca0lf873xdtbc" path="res://assets/Obstacle.blend" id="4_7m85x"]
 [ext_resource type="PackedScene" uid="uid://cgpyejg30gb8f" path="res://assets/PlayerShip.blend" id="4_tdnqd"]
 [ext_resource type="Script" path="res://scripts/ship_collision.gd" id="5_ure8i"]

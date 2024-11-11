@@ -8,7 +8,6 @@ func _ready():
 		get_mesh()
 	var shape = mesh.create_convex_shape()
 	set_shape(shape)
-	print("Shape")
 
 
 func _process(delta):
