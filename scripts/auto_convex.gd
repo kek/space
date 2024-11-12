@@ -1,14 +1,7 @@
-extends CollisionShape3D
-
+extends GameObject
 
 func _ready():
-	var mesh = get_parent().\
-		find_child("Model").\
-		find_child("Body").\
-		get_mesh()
-	var shape = mesh.create_convex_shape()
-	set_shape(shape)
-
-
-func _process(delta):
+	make_shape("convex")
+	
+func _process(_delta):
 	pass
