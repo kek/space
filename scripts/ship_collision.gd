@@ -3,7 +3,7 @@ extends CollisionShape3D
 
 func _ready():
 	var mesh = get_parent().\
-		find_child("PlayerShip").\
+		find_child("Spaceship").\
 		find_child("Cube").\
 		get_mesh()
 	var shape = mesh.create_convex_shape()

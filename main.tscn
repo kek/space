@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/ship.gd" id="1_og1tj"]
 [ext_resource type="Script" path="res://scripts/obstacle_collision.gd" id="2_ddv4y"]
 [ext_resource type="PackedScene" uid="uid://ca0lf873xdtbc" path="res://assets/Obstacle.blend" id="4_7m85x"]
-[ext_resource type="PackedScene" uid="uid://cgpyejg30gb8f" path="res://assets/PlayerShip.blend" id="4_tdnqd"]
+[ext_resource type="PackedScene" uid="uid://cgpyejg30gb8f" path="res://assets/Spaceship.blend" id="4_tdnqd"]
 [ext_resource type="Script" path="res://scripts/ship_collision.gd" id="5_ure8i"]
 
 [sub_resource type="Sky" id="Sky_6w4nb"]
@@ -28,7 +28,7 @@ func _process(delta):
 	pass
 "
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rdoqn"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_oyxan"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d14el"]
 
@@ -45,7 +45,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23.5186)
 script = SubResource("GDScript_6v8tx")
 
 [node name="obstacle collision" type="CollisionShape3D" parent="ball"]
-shape = SubResource("ConcavePolygonShape3D_rdoqn")
+shape = SubResource("ConcavePolygonShape3D_oyxan")
 script = ExtResource("2_ddv4y")
 
 [node name="Obstacle" parent="ball" instance=ExtResource("4_7m85x")]
@@ -54,14 +54,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00662041)
 [node name="player" type="CharacterBody3D" parent="."]
 script = ExtResource("1_og1tj")
 
-[node name="PlayerShip" parent="player" instance=ExtResource("4_tdnqd")]
+[node name="Spaceship" parent="player" instance=ExtResource("4_tdnqd")]
 
 [node name="ship collision" type="CollisionShape3D" parent="player"]
 shape = SubResource("ConvexPolygonShape3D_d14el")
 script = ExtResource("5_ure8i")
 
 [node name="following camera" type="Camera3D" parent="player"]
-transform = Transform3D(-1, -6.23681e-09, 8.72e-08, 5.80434e-08, 0.698515, 0.715595, -6.53736e-08, 0.715595, -0.698515, 3.26575e-07, 4.40009, -3.73558)
+transform = Transform3D(-1, -6.23684e-09, 8.72e-08, 1.34498e-08, 0.974601, 0.223948, -8.6382e-08, 0.223948, -0.974601, 3.26575e-07, 1.07852, -3.73558)
 current = true
 
 [node name="external camera" type="Camera3D" parent="."]

@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://c83ru71qwmvvh"]
 
-[ext_resource type="PackedScene" uid="uid://cgpyejg30gb8f" path="res://assets/PlayerShip.blend" id="1_6qvqq"]
+[ext_resource type="PackedScene" uid="uid://cgpyejg30gb8f" path="res://assets/Spaceship.blend" id="1_6qvqq"]
 
-[node name="PlayerShip" instance=ExtResource("1_6qvqq")]
+[node name="Spaceship" instance=ExtResource("1_6qvqq")]
