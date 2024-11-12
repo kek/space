@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dndaake5ns0gr"]
+[gd_scene load_steps=10 format=3 uid="uid://dndaake5ns0gr"]
 
 [ext_resource type="Script" path="res://scripts/ship.gd" id="1_og1tj"]
-[ext_resource type="Script" path="res://scripts/auto_trimesh.gd" id="2_ddv4y"]
-[ext_resource type="PackedScene" uid="uid://ca0lf873xdtbc" path="res://assets/Obstacle.blend" id="4_7m85x"]
-[ext_resource type="Script" path="res://scripts/auto_convex.gd" id="4_tcwve"]
+[ext_resource type="Script" path="res://scripts/collider.gd" id="2_ybsm3"]
 [ext_resource type="PackedScene" uid="uid://cgpyejg30gb8f" path="res://assets/Spaceship.blend" id="4_tdnqd"]
 [ext_resource type="PackedScene" uid="uid://bo2ysoav2imtx" path="res://assets/TestStructure.blend" id="6_58cfy"]
+[ext_resource type="PackedScene" uid="uid://b7nlnxs5sw0w" path="res://assets/Station.blend" id="6_dyijo"]
+[ext_resource type="PackedScene" uid="uid://5uvl1jdidael" path="res://prop.tscn" id="7_ekm4t"]
 
 [sub_resource type="Sky" id="Sky_6w4nb"]
 
@@ -17,11 +17,7 @@ fog_light_energy = 0.0
 fog_sun_scatter = 0.38
 fog_density = 0.0811
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_oyxan"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d14el"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yj4w1"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lqkl6"]
 
 [node name="Space" type="Node3D"]
 
@@ -31,37 +27,30 @@ transform = Transform3D(1, 0, 0, 0, -0.568562, 0.82264, 0, -0.82264, -0.568562, 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pyc6q")
 
-[node name="Station" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23.5186)
-
-[node name="Collision" type="CollisionShape3D" parent="Station"]
-shape = SubResource("ConcavePolygonShape3D_oyxan")
-script = ExtResource("2_ddv4y")
-
-[node name="Model" parent="Station/Collision" instance=ExtResource("4_7m85x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00662041)
-
 [node name="Spaceship" type="CharacterBody3D" parent="."]
 script = ExtResource("1_og1tj")
+metadata/convex = true
 
-[node name="Collision" type="CollisionShape3D" parent="Spaceship"]
-shape = SubResource("ConvexPolygonShape3D_d14el")
-script = ExtResource("4_tcwve")
-
-[node name="Model" parent="Spaceship/Collision" instance=ExtResource("4_tdnqd")]
-
-[node name="following camera" type="Camera3D" parent="Spaceship"]
+[node name="Following Camera" type="Camera3D" parent="Spaceship"]
 transform = Transform3D(-1, -6.23684e-09, 8.72e-08, 1.34498e-08, 0.974601, 0.223948, -8.6382e-08, 0.223948, -0.974601, 3.26575e-07, 1.07852, -3.73558)
 current = true
 
-[node name="Thing" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1051, -0.41273, 13.4861)
+[node name="Collision" type="CollisionShape3D" parent="Spaceship"]
+shape = SubResource("ConvexPolygonShape3D_lqkl6")
+script = ExtResource("2_ybsm3")
 
-[node name="Collision" type="CollisionShape3D" parent="Thing"]
-shape = SubResource("ConvexPolygonShape3D_yj4w1")
-script = ExtResource("4_tcwve")
+[node name="Model" parent="Spaceship" instance=ExtResource("4_tdnqd")]
 
-[node name="Model" parent="Thing/Collision" instance=ExtResource("6_58cfy")]
-
-[node name="external camera" type="Camera3D" parent="."]
+[node name="External Camera" type="Camera3D" parent="."]
 transform = Transform3D(0.0738623, 0.259982, -0.962784, -0.0198867, 0.965613, 0.25922, 0.99707, -1.11067e-08, 0.0764926, -9.86531, 2.40453, 4.45359)
+
+[node name="Thing" parent="." instance=ExtResource("7_ekm4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.20458)
+metadata/convex = true
+
+[node name="Model" parent="Thing" instance=ExtResource("6_58cfy")]
+
+[node name="Station" parent="." instance=ExtResource("7_ekm4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26.4749)
+
+[node name="Model" parent="Station" instance=ExtResource("6_dyijo")]

@@ -2,7 +2,7 @@ extends PhysicsBody3D
 
 
 func _ready():
-	pass	
+	pass
 
 func _process(delta):
 	var speed = 0
