@@ -117,15 +117,16 @@ var internal_shader_params = {
 # is generated at runtime.
 func _get_property_list():
 	var props = []
-	var shader_params := RenderingServer.get_shader_parameter_list(shader.get_rid())
-	for p in shader_params:
-		if internal_shader_params.has(p.name):
-			continue
-		var cp = {}
-		for k in p:
-			cp[k] = p[k]
-		cp.name = str("shader_params/", p.name)
-		props.append(cp)
+	if shader:
+		var shader_params := RenderingServer.get_shader_parameter_list(shader.get_rid())
+		for p in shader_params:
+			if internal_shader_params.has(p.name):
+				continue
+			var cp = {}
+			for k in p:
+				cp[k] = p[k]
+			cp.name = str("shader_params/", p.name)
+			props.append(cp)
 	return props
 
 
