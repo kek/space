@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://but0hx32kjeob"]
+
+[ext_resource type="Script" path="res://scripts/ship.gd" id="1_xn707"]
+[ext_resource type="Script" path="res://scripts/collider.gd" id="2_ip7lo"]
+[ext_resource type="PackedScene" uid="uid://cgpyejg30gb8f" path="res://assets/Spaceship.blend" id="3_laudp"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lqkl6"]
+
+[node name="Spaceship" type="CharacterBody3D"]
+script = ExtResource("1_xn707")
+metadata/convex = true
+
+[node name="Following Camera" type="Camera3D" parent="."]
+transform = Transform3D(-1, -6.23684e-09, 8.72e-08, 1.34498e-08, 0.974601, 0.223948, -8.6382e-08, 0.223948, -0.974601, 3.26575e-07, 1.07852, -3.73558)
+current = true
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_lqkl6")
+script = ExtResource("2_ip7lo")
+
+[node name="Model" parent="." instance=ExtResource("3_laudp")]
+
+[node name="Headlight" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -0.5, 0, 1.785)
+spot_range = 12.0255
+spot_angle = 51.2086
+
+[node name="Headlight2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.5, 0, 1.785)
+spot_range = 12.0255
+spot_angle = 51.2086
