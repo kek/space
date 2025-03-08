@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ca0lf873xdtbc"
-path="res://.godot/imported/Obstacle.blend-3c80efde686695d01311e017894dfd75.scn"
+uid="uid://bx46gw3o14dqi"
+path="res://.godot/imported/Space scene.blend-7528396f43843bb4b213d9af4251c3e1.scn"
 
 [deps]
 
-source_file="res://assets/Obstacle.blend"
-dest_files=["res://.godot/imported/Obstacle.blend-3c80efde686695d01311e017894dfd75.scn"]
+source_file="res://assets/Space scene.blend"
+dest_files=["res://.godot/imported/Space scene.blend-7528396f43843bb4b213d9af4251c3e1.scn"]
 
 [params]
 

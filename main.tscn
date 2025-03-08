@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://but0hx32kjeob" path="res://spaceship.tscn" id="1_nljeu"]
 [ext_resource type="PackedScene" uid="uid://b0nt4n13a6448" path="res://addons/starlight/Stars.tscn" id="4_70vvc"]
-[ext_resource type="Script" path="res://addons/starlight/StarGenerator.gd" id="5_m3bha"]
+[ext_resource type="Script" uid="uid://dlkap43kdmi8t" path="res://addons/starlight/StarGenerator.gd" id="5_m3bha"]
 [ext_resource type="PackedScene" uid="uid://b7nlnxs5sw0w" path="res://assets/Station.blend" id="6_dyijo"]
 [ext_resource type="PackedScene" uid="uid://5uvl1jdidael" path="res://prop.tscn" id="7_ekm4t"]
 
@@ -19,8 +19,6 @@ material = SubResource("StandardMaterial3D_5kn8o")
 
 [node name="Sun" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.568562, 0.82264, 0, -0.82264, -0.568562, 0, 64.991, -86.3976)
-light_energy = 10.0
-light_indirect_energy = 8.0
 omni_range = 4096.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sun"]
@@ -34,7 +32,6 @@ skeleton = NodePath("../CollisionShape3D")
 
 [node name="Sun2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.568562, 0.82264, 0, -0.82264, -0.568562, -15.9334, -12.5929, 73.4543)
-visible = false
 light_energy = 10.0
 light_indirect_energy = 8.0
 omni_range = 4096.0

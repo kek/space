@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://but0hx32kjeob"]
 
-[ext_resource type="Script" path="res://scripts/ship.gd" id="1_xn707"]
-[ext_resource type="Script" path="res://scripts/collider.gd" id="2_ip7lo"]
-[ext_resource type="PackedScene" uid="uid://cgpyejg30gb8f" path="res://assets/Spaceship.blend" id="3_laudp"]
+[ext_resource type="Script" uid="uid://c0e1j4asabyp1" path="res://scripts/ship.gd" id="1_xn707"]
+[ext_resource type="Script" uid="uid://hqojw5pykdf0" path="res://scripts/collider.gd" id="2_ip7lo"]
+[ext_resource type="PackedScene" uid="uid://cgpyejg30gb8f" path="res://assets/Spaceship.blend" id="3_pmkdn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i64jv"]
 
@@ -12,6 +12,9 @@ sky_material = SubResource("ProceduralSkyMaterial_i64jv")
 [sub_resource type="Environment" id="Environment_xiuwm"]
 background_mode = 1
 sky = SubResource("Sky_2ccup")
+ambient_light_source = 2
+ambient_light_color = Color(0.991698, 0.936278, 0.787672, 1)
+ambient_light_energy = 0.25
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lqkl6"]
 
@@ -28,8 +31,6 @@ current = true
 shape = SubResource("ConvexPolygonShape3D_lqkl6")
 script = ExtResource("2_ip7lo")
 
-[node name="Model" parent="." instance=ExtResource("3_laudp")]
-
 [node name="Headlight" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -0.5, 0, 1.785)
 spot_range = 12.0255
@@ -39,3 +40,5 @@ spot_angle = 51.2086
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.5, 0, 1.785)
 spot_range = 12.0255
 spot_angle = 51.2086
+
+[node name="Model" parent="." instance=ExtResource("3_pmkdn")]

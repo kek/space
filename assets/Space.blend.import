@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ca0lf873xdtbc"
-path="res://.godot/imported/Obstacle.blend-3c80efde686695d01311e017894dfd75.scn"
+uid="uid://ooekc2cvltjm"
+path="res://.godot/imported/Space.blend-16417b4214c4eded7cfb92d87de4b078.scn"
 
 [deps]
 
-source_file="res://assets/Obstacle.blend"
-dest_files=["res://.godot/imported/Obstacle.blend-3c80efde686695d01311e017894dfd75.scn"]
+source_file="res://assets/Space.blend"
+dest_files=["res://.godot/imported/Space.blend-16417b4214c4eded7cfb92d87de4b078.scn"]
 
 [params]
 
@@ -35,8 +35,8 @@ import_script/path=""
 _subresources={}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
-blender/nodes/punctual_lights=true
-blender/nodes/cameras=true
+blender/nodes/punctual_lights=false
+blender/nodes/cameras=false
 blender/nodes/custom_properties=true
 blender/nodes/modifiers=1
 blender/meshes/colors=false

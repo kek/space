@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://5uvl1jdidael"]
 
-[ext_resource type="Script" path="res://scripts/collider.gd" id="1_f363s"]
+[ext_resource type="Script" uid="uid://hqojw5pykdf0" path="res://scripts/collider.gd" id="1_f363s"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_f3qo7"]
 
