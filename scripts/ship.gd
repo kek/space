@@ -24,6 +24,7 @@ func _process(delta):
 	var coll = move_and_collide(movement)
 	if coll:
 		print(coll.get_collider())
+		speed = 0
 	else:
 		_steer(delta)
 
